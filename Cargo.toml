@@ -1,5 +1,5 @@
 [package]
-name = "numerical_recipes_rs"
+name = "nrir"
 version = "0.1.0"
 edition = "2024"
 

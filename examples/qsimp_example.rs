@@ -1,4 +1,4 @@
-use numerical_recipes_rs::algorithms::integration::qsimp::Qsimp;
+use nrir::algorithms::integration::qsimp::Qsimp;
 
 fn main() {
     let qsimp = Qsimp;

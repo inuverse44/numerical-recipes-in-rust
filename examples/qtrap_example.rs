@@ -1,4 +1,4 @@
-use numerical_recipes_rs::algorithms::integration::qtrap::Qtrap;
+use nrir::algorithms::integration::qtrap::Qtrap;
 
 fn main() {
     let qtrap = Qtrap;

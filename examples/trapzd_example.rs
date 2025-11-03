@@ -1,4 +1,4 @@
-use numerical_recipes_rs::algorithms::integration::trapzd::Trapzd;
+use nrir::algorithms::integration::trapzd::Trapzd;
 
 fn main() {
     let trapzd = Trapzd;

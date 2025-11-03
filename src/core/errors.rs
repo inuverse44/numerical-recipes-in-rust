@@ -3,6 +3,9 @@ use std::fmt;
 #[derive(Debug)]
 pub enum NumericalError {
     ConvergenceError { context: String },
+    LengthError { context: String },
+    RootError { context: String }, 
+    MultipleRootError { context: String },
     InvalidArgument(String),
 }
 
@@ -13,6 +16,27 @@ impl fmt::Display for NumericalError {
                 write!(
                     f,
                     "Maximum steps exceeded without convergence in {}",
+                    context
+                )
+            }
+            NumericalError::LengthError { context } => {
+                write!(
+                    f,
+                    "Length is mismatch in {}", 
+                    context
+                )
+            }
+            NumericalError::RootError { context } => {
+                write!(
+                    f,
+                    "Root does not exist: {}", 
+                    context
+                )
+            }
+            NumericalError::MultipleRootError { context } => {
+                write!(
+                    f,
+                    "Multiple root are in {}", 
                     context
                 )
             }

@@ -1,6 +1,6 @@
 use nalgebra::DVector;
-use numerical_recipes_rs::core::traits::ODE;
-use numerical_recipes_rs::algorithms::ode::rk4::Rk4;
+use nrir::core::traits::ODE;
+use nrir::algorithms::ode::rk4::Rk4;
 
 pub struct Pendulum {
     g: f64,

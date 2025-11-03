@@ -1,4 +1,4 @@
-use nrir::algorithms::integration::qromb::qromb;
+use nrir::algorithms::integration::qromb::{qromb, Qromb};
 
 fn main() {
     // Integrate exp(-x^2) from 0 to 1.
@@ -15,7 +15,20 @@ fn main() {
     );
     println!("Reference value (≈): {}", expected);
 
+    println!("\n-- Function API --");
     match qromb(&integrand, a, b, eps) {
+        Ok(val) => {
+            println!("Result: {}", val);
+            println!("Error:  {}", (val - expected).abs());
+        }
+        Err(e) => {
+            println!("An error occurred: {}", e);
+        }
+    }
+
+    println!("\n-- Struct API (Qromb) --");
+    let q = Qromb;
+    match q.integrate(&integrand, a, b, eps) {
         Ok(val) => {
             println!("Result: {}", val);
             println!("Error:  {}", (val - expected).abs());

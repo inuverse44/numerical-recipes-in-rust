@@ -4,6 +4,7 @@ use std::fmt;
 pub enum NumericalError {
     ConvergenceError { context: String },
     LengthError { context: String },
+    RootError { context: String }, 
     MultipleRootError { context: String },
     InvalidArgument(String),
 }
@@ -22,6 +23,13 @@ impl fmt::Display for NumericalError {
                 write!(
                     f,
                     "Length is mismatch in {}", 
+                    context
+                )
+            }
+            NumericalError::RootError { context } => {
+                write!(
+                    f,
+                    "Root does not exist: {}", 
                     context
                 )
             }
